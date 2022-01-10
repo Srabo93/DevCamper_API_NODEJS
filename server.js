@@ -22,6 +22,10 @@ const bootcamps = require("./routes/bootcamps");
  * INITIALIZE APP
  */
 const app = express();
+/**
+ * BODY PARSER
+ */
+app.use(express.json());
 
 /**
  * DEV LOGGING MIDDLEWARE
