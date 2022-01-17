@@ -11,6 +11,8 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 /*ROUTE FILES*/
 const bootcamps = require("./routes/bootcamps");
+const courses = require("./routes/courses");
+
 /**
  * INITIALIZE APP
  */
@@ -24,6 +26,7 @@ if (process.env.NODE_ENV === "development") {
 }
 /* MOUNT ROUTERS*/
 app.use("/api/v1/bootcamps", bootcamps);
+app.use("/api/v1/courses", courses);
 /* ERROR MIDDLEWARE */
 app.use(errorHandler);
 
