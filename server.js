@@ -14,6 +14,7 @@ connectDB();
 /*ROUTE FILES*/
 const bootcamps = require("./routes/bootcamps");
 const courses = require("./routes/courses");
+const auth = require("./routes/auth");
 
 /**
  * INITIALIZE APP
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 /* MOUNT ROUTERS*/
 app.use("/api/v1/bootcamps", bootcamps);
 app.use("/api/v1/courses", courses);
+app.use("/api/v1/auth", auth);
 /* ERROR MIDDLEWARE */
 app.use(errorHandler);
 
