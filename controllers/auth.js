@@ -19,8 +19,6 @@ exports.register = asyncHandler(async (req, res, next) => {
   });
 
   sendTokenResponse(user, 200, res);
-
-  res.status(200).json({ success: true, token });
 });
 
 /**
@@ -48,8 +46,6 @@ exports.login = asyncHandler(async (req, res, next) => {
   }
 
   sendTokenResponse(user, 200, res);
-
-  res.status(200).json({ success: true, token });
 });
 
 /*Get token from Model, create cookie and send response */
