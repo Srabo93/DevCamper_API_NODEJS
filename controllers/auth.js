@@ -7,7 +7,6 @@ const User = require("../models/User");
  * @route POST /api/v1/auth/register
  * @access Public
  */
-
 exports.register = asyncHandler(async (req, res, next) => {
   const { name, email, password, role } = req.body;
   /*Create User */
@@ -48,6 +47,43 @@ exports.login = asyncHandler(async (req, res, next) => {
   sendTokenResponse(user, 200, res);
 });
 
+/**
+ * Get current logged in user
+ * @route POST /api/v1/auth/me
+ * @access Private
+ */
+exports.getMe = asyncHandler(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  res.status(200).json({
+    success: true,
+    data: user,
+  });
+});
+
+/**
+ * Forgot Password
+ * @route POST /api/v1/auth/forgotpassword
+ * @access Public
+ */
+exports.forgotPassword = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorResponse("There is no user with that Email", 404));
+  }
+
+  /*Get reset Token */
+  const resetToken = user.getResetPasswordToken();
+
+  await user.save({ validateBeforeSave: false });
+  console.log(resetToken);
+  res.status(200).json({
+    success: true,
+    data: user,
+  });
+});
+
 /*Get token from Model, create cookie and send response */
 const sendTokenResponse = (user, statusCode, res) => {
   /*Create Token */
@@ -66,17 +102,3 @@ const sendTokenResponse = (user, statusCode, res) => {
     .cookie("token", token, options)
     .json({ success: true, token });
 };
-
-/**
- * Get current logged in user
- * @route POST /api/v1/auth/me
- * @access Private
- */
-exports.getMe = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.user.id);
-
-  res.status(200).json({
-    success: true,
-    data: user,
-  });
-});
