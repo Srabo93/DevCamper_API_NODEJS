@@ -12,12 +12,14 @@ const Bootcamp = require("../models/Bootcamp");
 
 /*INCLUDE OTHER RESOURCE ROUTERS */
 const courseRouter = require("./courses");
+const reviewRouter = require("./reviews");
 const router = express.Router(bootcampPhotoUpload);
 const advancedResults = require("../middleware/advancedResults");
 const { protect, authorize } = require("../middleware/auth");
 
 /*RE-ROUTE INTO OTHER RESOURCE ROUTERS */
 router.use("/:bootcampId/courses", courseRouter);
+router.use("/:bootcampId/reviews", reviewRouter);
 /*ROUTES */
 router
   .route("/")
