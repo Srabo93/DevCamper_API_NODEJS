@@ -9,6 +9,8 @@ const colors = require("colors");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const xss = require("xss-clean");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 /* LOAD ENV VARS*/
@@ -45,6 +47,12 @@ app.use(mongoSanitize());
 app.use(helmet());
 /*PREVENT CROSS SITE SCRIPTING */
 app.use(xss());
+/*RATE LIMITING */
+const limiter = rateLimit({ windowMs: 10 * 60 * 1000, max: 100 });
+
+app.use(limiter);
+/*PREVENT HTTP PARAM POLLUTION */
+app.use(hpp());
 /*SET STATIC FOLDER */
 app.use(express.static(path.join(__dirname, "public")));
 /* MOUNT ROUTERS*/
