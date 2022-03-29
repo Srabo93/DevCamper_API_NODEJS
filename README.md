@@ -1,6 +1,6 @@
 # DevCamper_API_NODE_JS
 
-This is my very first NodeJS project, building an API. Target of this Project was to collect as much knowledge as possible for my own future projects.
+This is my very first (course related) NodeJS project, building a Bootcamp API that offers routes to run a Website resolving around offering Bootcamps. Goal of this Project was to collect as much knowledge as possible for my own future projects.
 
 ## Technology
 
