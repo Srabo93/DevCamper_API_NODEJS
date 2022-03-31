@@ -9,7 +9,7 @@ This is my very first (course related) NodeJS project, building a Bootcamp API t
  - [MongoDB](https://mongodb.com/)
  - [Mongoose](https://mongoosejs.com/)
 
-## Demo
+## Functionality
 
 Functionality of the API: 
 - Authentication 
@@ -17,3 +17,19 @@ Functionality of the API:
 - Aggregation
 
 Documentation: https://documenter.getpostman.com/view/19017681/UVyoXeJR#ccdf65d6-13df-46d4-be81-f6580c144d4f
+
+Rename "config/config.env.env" to "config/config.env" and update the value/settings to your own.
+
+## Install Dependencies
+```
+npm install
+```
+
+## Run App
+```
+# Run in Dev Mode
+npm run dev
+
+# Run production build
+npm start
+```
