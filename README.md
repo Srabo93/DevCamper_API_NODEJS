@@ -28,4 +28,3 @@ Rename "config/config.env.env" to "config/config.env" and update the value/setti
 npm install
 ```
 
-```
