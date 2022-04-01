@@ -16,7 +16,9 @@ Functionality of the API:
 - CRUD functionalities
 - Aggregation
 
-Documentation: https://documenter.getpostman.com/view/19017681/UVyoXeJR#ccdf65d6-13df-46d4-be81-f6580c144d4f
+## Live API
+https://devcamper-api-1337.herokuapp.com/
+<a href="https://documenter.getpostman.com/view/19017681/UVyoXeJR#ccdf65d6-13df-46d4-be81-f6580c144d4f" target="_blank">Documentation</a>
 
 Rename "config/config.env.env" to "config/config.env" and update the value/settings to your own.
 
@@ -25,11 +27,4 @@ Rename "config/config.env.env" to "config/config.env" and update the value/setti
 npm install
 ```
 
-## Run App
-```
-# Run in Dev Mode
-npm run dev
-
-# Run production build
-npm start
 ```
