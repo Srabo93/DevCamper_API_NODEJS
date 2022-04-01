@@ -18,6 +18,7 @@ Functionality of the API:
 
 ## Live API
 https://devcamper-api-1337.herokuapp.com/
+</br>
 <a href="https://documenter.getpostman.com/view/19017681/UVyoXeJR#ccdf65d6-13df-46d4-be81-f6580c144d4f" target="_blank">Documentation</a>
 
 Rename "config/config.env.env" to "config/config.env" and update the value/settings to your own.
